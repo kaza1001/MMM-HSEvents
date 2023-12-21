@@ -17,13 +17,29 @@ Module.register("MMM-HSEvents", {
     },
   
     getDom: function () {
-      var wrapper = document.createElement("div");
+      var wrapper = document.createElement("table");
+      wrapper.className = "event-table";
       if (this.events.length == 0) {
-        wrapper.innerHTML = "Loading events...";
-        wrapper.className = "dimmed light small";
+        var row = document.createElement("tr");
+        var cell = document.createElement("td");
+        cell.innerHTML = "Loading events...";
+        row.appendChild(cell);
+        wrapper.appendChild(row);
         return wrapper;
       }
-      // Display the events in the wrapper
+      this.events.forEach(event => {
+        var row = document.createElement("tr");
+        var dateCell = document.createElement("td");
+        dateCell.innerHTML = event.date;
+        var titleCell = document.createElement("td");
+        titleCell.innerHTML = event.title;
+        var descCell = document.createElement("td");
+        descCell.innerHTML = event.description;
+        row.appendChild(dateCell);
+        row.appendChild(titleCell);
+        row.appendChild(descCell);
+        wrapper.appendChild(row);
+      });
       return wrapper;
     },
   
