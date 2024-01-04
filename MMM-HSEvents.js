@@ -44,8 +44,30 @@ Module.register("MMM-HSEvents", {
     },
   
     getEvents: function () {
-      this.sendSocketNotification("GET_EVENTS");
+      var self = this;
+      axios
+        .get("https://www.hs-kl.de/hochschule/aktuelles/termine-events")
+        .then(function (response) {
+          const $ = cheerio.load(response.data);
+          const events = [];
+          $('.vevent').each((index, element) => {
+            const dateStr = $(element).find('.dtstart').attr('datetime'); // Get the date in ISO format
+            const eventDate = new Date(dateStr);
+            const today = new Date();
+            if (eventDate >= today) { // Only consider future or today's events
+              const date = $(element).find('.dtstart').text().trim();
+              const title = $(element).find('.summary a').text().trim();
+              const description = $(element).find('.teaser.description').text().trim();
+              events.push({ date, title, description });
+            }
+          });
+          self.sendSocketNotification("EVENTS_RESULT", events);
+        })
+        .catch(function (error) {
+          console.error("Error fetching events: " + error.message);
+        });
     },
+    
   
     socketNotificationReceived: function (notification, payload) {
       if (notification === "EVENTS_RESULT") {
