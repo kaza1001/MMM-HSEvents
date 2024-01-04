@@ -1,8 +1,8 @@
 .event-table {
   font-family: Arial, sans-serif;
   border-collapse: collapse;
-  width: 100%;
-  height: 20%
+  width: 80%;
+  height: 10%
 }
 
 .event-table td, .event-table th {
