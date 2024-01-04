@@ -5,6 +5,12 @@
   height: 15vw;
 }
 
+.MMM-HSEvents {
+  width: 80%;
+  height: 15vh;
+}
+
+
 .event-table td, .event-table th {
   border: 1px solid #dddddd;
   text-align: left;
