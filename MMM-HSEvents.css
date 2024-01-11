@@ -1,9 +1,13 @@
 /* MMM-HSEvents.css */
 
-.MMM-HSEvents {
-  width: 80%; /* Set the module width to 80% */
-  height: 20vh; /* Set the module height to 20vh */
-  margin: 0 auto; /* Center the module horizontally */
+.event-wrapper {
+  width: 70%; /* Set the module width to 70% */
+  float: left; /* Align the module to the left */
+}
+
+.event-title {
+  font-size: 1.5em; /* Increase the font size for the title */
+  margin-bottom: 10px; /* Add margin at the bottom of the title */
 }
 
 .event-table {
@@ -15,7 +19,7 @@
 }
 
 .event-table td, .event-table th {
-  border: 1px solid #dddddd; /* Add borders to the table cells */
+  border: 1px solid #4285f4; /* Add borders to the table cells */
   text-align: left; /* Align text to the left */
   padding: 8px; /* Add padding to the table cells */
 }
