@@ -1,26 +1,26 @@
-.event-table {
-  font-family: Arial, sans-serif;
-  border-collapse: collapse;
-  width: 80vw;
-  height: 15vw;
-  margin: 0 auto;
-}
+/* MMM-HSEvents.css */
 
 .MMM-HSEvents {
-  width: 80%;
-  height: 20vh;
-  margin: 0 auto;
+  width: 80%; /* Set the module width to 80% */
+  height: 20vh; /* Set the module height to 20vh */
+  margin: 0 auto; /* Center the module horizontally */
 }
 
+.event-table {
+  font-family: Arial, sans-serif; /* Set the font family */
+  border-collapse: collapse; /* Collapse the borders */
+  width: 80vw; /* Set the table width to 80vw */
+  height: 15vw; /* Set the table height to 15vw */
+  margin: 0 auto; /* Center the table horizontally */
+}
 
 .event-table td, .event-table th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
+  border: 1px solid #dddddd; /* Add borders to the table cells */
+  text-align: left; /* Align text to the left */
+  padding: 8px; /* Add padding to the table cells */
 }
 
-
 .event-table th {
-  background-color: #4CAF50;
-  color: white;
+  background-color: #4CAF50; /* Add a background color to the header cells */
+  color: white; /* Set the text color to white */
 }

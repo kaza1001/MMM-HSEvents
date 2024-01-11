@@ -14,14 +14,23 @@ Module.register("MMM-HSEvents", {
     return ["MMM-HSEvents.css"];
   },
   getDom: function () {
-    var wrapper = document.createElement("table");
-    wrapper.className = "event-table";
+    var wrapper = document.createElement("div");
+    wrapper.className = "event-wrapper";
+
+    var title = document.createElement("div");
+    title.innerHTML = "Events HSKL Zweibrücken";
+    title.className = "event-title";
+    wrapper.appendChild(title);
+
+    var table = document.createElement("table");
+    table.className = "event-table";
     if (this.events.length == 0) {
       var row = document.createElement("tr");
       var cell = document.createElement("td");
       cell.innerHTML = "Loading events...";
       row.appendChild(cell);
-      wrapper.appendChild(row);
+      table.appendChild(row);
+      wrapper.appendChild(table);
       return wrapper;
     }
     this.events.forEach(event => {
@@ -35,8 +44,9 @@ Module.register("MMM-HSEvents", {
       row.appendChild(dateCell);
       row.appendChild(titleCell);
       row.appendChild(descCell);
-      wrapper.appendChild(row);
+      table.appendChild(row);
     });
+    wrapper.appendChild(table);
     return wrapper;
   },
   getEvents: function () {
@@ -48,4 +58,4 @@ Module.register("MMM-HSEvents", {
       this.updateDom();
     }
   },
-});
+})
