@@ -3,7 +3,10 @@
 .event-wrapper {
   width: 70%; /* Set the module width to 70% */
   float: left; /* Align the module to the left */
+  clear: both; /* Ensure that the module is placed below the previous module */
+  margin-top: 20px; /* Set the top margin to create space from the previous module */
 }
+
 
 .event-title {
   font-size: 1.5em; /* Increase the font size for the title */
