@@ -4,7 +4,7 @@
   width: 70vw; /* Set the module width to 70% of the viewport width */
   height: auto; /* Set the height to auto to maintain aspect ratio */
   position: absolute;
-  top: 200;
+  top: 10;
   left: 0;
 }
 
