@@ -3,9 +3,9 @@
 .event-wrapper {
   width: 70vw; /* Set the module width to 70% of the viewport width */
   height: auto; /* Set the height to auto to maintain aspect ratio */
-  display: flex; /* Use flexbox for the layout */
-  flex-direction: column; /* Set the flex direction to column for vertical stacking */
-  margin-top: 20px; /* Set the top margin to create space from the top of the screen or the previous module */
+  position: absolute;
+  top: 200;
+  left: 0;
 }
 
 
